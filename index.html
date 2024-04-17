@@ -14,18 +14,22 @@ body {
     background-color: #f2f2f2;
 }
 
+.calculator-container {
+    max-width: 400px;
+    width: 100%;
+}
+
 .calculator {
     background: #fff;
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    width: 100%;
 }
 
 .calculator h1 {
     text-align: center;
     color: #333;
+    margin-bottom: 20px;
 }
 
 .calculator label {
@@ -70,12 +74,14 @@ body {
 </head>
 <body>
 
-<div class="calculator">
+<div class="calculator-container">
     <h1>Water Intake Calculator</h1>
-    <label for="weight">Enter your weight in lbs:</label>
-    <input type="number" id="weight" required>
-    <button onclick="calculateWaterIntake()">Calculate</button>
-    <div id="result"></div>
+    <div class="calculator">
+        <label for="weight">Enter your weight in lbs:</label>
+        <input type="number" id="weight" required>
+        <button onclick="calculateWaterIntake()">Calculate</button>
+        <div id="result"></div>
+    </div>
 </div>
 
 <script>
@@ -86,6 +92,11 @@ function calculateWaterIntake() {
     const result = document.getElementById('result');
     result.textContent = `You should drink approximately ${waterIntakeCups.toFixed(2)} cups of water per day.`;
 }
+</script>
+
+</body>
+</html>
+
 </script>
 
 </body>
